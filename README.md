@@ -1,21 +1,25 @@
-# React online marathon
+# Advanced Frontend with React.js
 
 ## The tasks of the topic "ESLint"
 
 There is some project.
 
-Implement a configuration of `ESLint` for this project to provide next rules:
+Install `eslint` as a development dependency and add an ESLint configuration file so that the following rules are reported as errors.
+
+The configuration must parse modern JavaScript (`let`, `const`, arrow functions). Each example below shows only the rule it describes; follow all listed rules in your config. Formatting rules may use the core ESLint names or the equivalent `@stylistic/*` rules.
 
 1. Enforce indent of 4 spaces
 
 	_incorrect code for this rule_
+
 	```js
 	if (a) {
 	 b = c;
 	}
 	```
-	  
+
 	_correct code for this rule_
+
 	```js
 	if (a) {
 	    b = c;
@@ -25,11 +29,13 @@ Implement a configuration of `ESLint` for this project to provide next rules:
 2. Require spaces around operators
 
 	_incorrect code for this rule_
+
 	```js
 	a=b+c;
 	```
-	
+
 	_correct code for this rule_
+
 	```js
 	a = b + c;
 	```
@@ -37,11 +43,13 @@ Implement a configuration of `ESLint` for this project to provide next rules:
 3. Enforce the consistent use of single quotes
 
 	_incorrect code for this rule_
+
 	```js
 	a = "double";
 	```
-	
+
 	_correct code for this rule_
+
 	```js
 	a = 'single';
 	```
@@ -49,11 +57,13 @@ Implement a configuration of `ESLint` for this project to provide next rules:
 4. Require `let` or `const` instead of `var`
 
 	_incorrect code for this rule_
+
 	```js
 	var a = 0;
 	```
-	
+
 	_correct code for this rule_
+
 	```js
 	let a = 0;
 	```
@@ -61,58 +71,73 @@ Implement a configuration of `ESLint` for this project to provide next rules:
 5. Require `const` declarations for variables that are never reassigned after declared
 
 	_incorrect code for this rule_
+
 	```js
-	let a = 'it`s initialized and never reassigned';
+	let a = 'initialized and never reassigned';
 	```
-	
+
 	_correct code for this rule_
+
 	```js
-	const a = 'it`s initialized and never reassigned';
+	const a = 'initialized and never reassigned';
 	```
 
 6. Enforce the use of `===` and `!==`
 
 	_incorrect code for this rule_
+
 	```js
-	a == b
+	a == b;
 	```
-	
-	_сorrect code for this rule_
+
+	_correct code for this rule_
+
 	```js
-	a === b
+	a === b;
 	```
 
 7. Disallow the use of `console`
 
 	_incorrect code for this rule_
+
 	```js
-	console.log("Some message");
+	console.log('Some message');
+	```
+
+	_correct code for this rule_
+
+	```js
+	const message = 'Some message';
 	```
 
 8. Disallow assignment operators in conditional expressions
 
 	_incorrect code for this rule_
+
 	```js
 	if (a = 0) {
-	  b = c;
+	    b = c;
 	}
 	```
-	
-	_сorrect code for this rule_
+
+	_correct code for this rule_
+
 	```js
 	if (a === 0) {
-	  b = c;
+	    b = c;
 	}
 	```
 
 9. Disallow unnecessary semicolons
 
 	_incorrect code for this rule_
+
 	```js
 	a = b;;
 	```
-	
-	_сorrect code for this rule_
+
+	_correct code for this rule_
+
 	```js
 	a = b;
 	```
@@ -120,11 +145,13 @@ Implement a configuration of `ESLint` for this project to provide next rules:
 10. Disallow comments on the same line as code
 
 	_incorrect code for this rule_
+
 	```js
 	a = 1; // a to 1
 	```
-	
-	_сorrect code for this rule_
+
+	_correct code for this rule_
+
 	```js
 	// a to 1
 	a = 1;
@@ -133,23 +160,40 @@ Implement a configuration of `ESLint` for this project to provide next rules:
 11. Disallow `else` blocks after `return` statements in `if` statements
 
 	_incorrect code for this rule_
+
 	```js
 	function demo() {
-	  if (a) {
-	    return b;
-	  } else {
+	    if (a) {
+	        return b;
+	    } else {
+	        return c;
+	    }
+	}
+	```
+
+	_correct code for this rule_
+
+	```js
+	function demo() {
+	    if (a) {
+	        return b;
+	    }
 	    return c;
-	  }
 	}
 	```
-	
-	_сorrect code for this rule_
+
+12. Require curly braces for all control statements
+
+	_incorrect code for this rule_
+
 	```js
-	function demo() {
-	  if (a) {
-	    return b;
-	  }
-	  return c;
+	if (a === 0) a += 2;
+	```
+
+	_correct code for this rule_
+
+	```js
+	if (a === 0) {
+	    a += 2;
 	}
 	```
-12. The last rule should be defined based on message of the autograding tests.

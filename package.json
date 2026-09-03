@@ -4,6 +4,9 @@
   "description": "eslint project",
   "author": "IT Academy",
   "license": "ISC",
+  "scripts": {
+    "test": "bash ./__tests__/test.sh"
+  },
   "devDependencies": {
   }
 }

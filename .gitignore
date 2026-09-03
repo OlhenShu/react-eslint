@@ -1,6 +1,11 @@
 # actions
 /.github
 
+# Fixtures unpacked from __tests__/src.zip when tests run
+/src/
+/src/check_working.js
+/src/rules_*.js
+
 # Logs
 logs
 *.log

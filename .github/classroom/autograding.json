@@ -2,11 +2,12 @@
   "tests": [
     {
       "name": "Test tools-eslint",
-      "setup": "",
-      "run": "echo tests ran",
+      "setup": "npm i",
+      "run": "bash ./__tests__/test.sh",
       "input": "",
-      "output": "",
+      "output": "Result of tests:",
       "comparison": "included",
+      "timeout": 120,
       "points": 10
     }
   ]

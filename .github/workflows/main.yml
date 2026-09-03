@@ -1,17 +1,20 @@
 name: Tests Workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     name: Autograding
+    # Skip the first run: creating a repo from the template always pushes once.
+    if: github.run_number > 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Prepare to tests
         run: npm i
       - name: Tests
-        run: |
-          bash -e ./__tests__/test.sh
+        run: bash ./__tests__/test.sh
       - uses: education/autograding@v1
-
