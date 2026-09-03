@@ -8,5 +8,6 @@
     "test": "bash ./__tests__/test.sh"
   },
   "devDependencies": {
+    "eslint": "^10.9.1"
   }
 }
