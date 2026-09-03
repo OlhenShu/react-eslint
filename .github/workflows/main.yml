@@ -11,6 +11,11 @@ jobs:
     # Skip the first run: creating a repo from the template always pushes once.
     if: github.run_number > 1
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      checks: write
+      statuses: write
     steps:
       - uses: actions/checkout@v4
       - name: Prepare to tests
