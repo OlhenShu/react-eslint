@@ -17,9 +17,12 @@ jobs:
       checks: write
       statuses: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
       - name: Prepare to tests
         run: npm i
       - name: Tests
         run: bash ./__tests__/test.sh
-      - uses: education/autograding@v1
